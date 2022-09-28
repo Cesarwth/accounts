@@ -20,8 +20,7 @@ public class PaymentAccountsController {
 
     @PostMapping(value="/paymentAccounts")
     PaymentResponse paymentAccount(@RequestBody final PaymentRequest accountRequest){
-        paymentAccountService.createPaymentAccount(accountRequest.getAccountDto());
-
-        return null;
+        PaymentResponse paymentResponse = paymentAccountService.createPaymentAccount(accountRequest.getAccountDto());
+        return paymentResponse;
     }
 }
